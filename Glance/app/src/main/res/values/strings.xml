@@ -12,4 +12,5 @@
     <string name="overdue">Overdue</string>
     <string name="today">Today</string>
     <string name="inbox">Inbox</string>
+    <string name="schedule_for_today">Schedule for Today</string>
 </resources>
