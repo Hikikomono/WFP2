@@ -5,7 +5,7 @@
 
     <!-- view background color -->
     <solid
-        android:color="@color/primaryColor" >
+        android:color="@color/colorPrimary" >
     </solid>
 
     <!-- view border color and width -->
