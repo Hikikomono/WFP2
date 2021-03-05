@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group
-        android:id="@+id/areas_navigationDrawer_group"
+    <group android:id="@+id/navigationDrawer_pages_group">
+        <item
+            android:id="@+id/InboxMenu"
+            android:title="Inbox"/>
+        <item
+            android:id="@+id/TodayMenu"
+            android:title="Today"/>
+        <item
+            android:id="@+id/HabitsMenu"
+            android:title="Habits"/>
+        <item
+            android:id="@+id/ScheduleMenu"
+            android:title="Schedule"/>
+    </group>
+    <group android:id="@+id/navigationDrawer_areas_group">
 
-        />
+    </group>
 </menu>
