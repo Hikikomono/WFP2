@@ -15,6 +15,11 @@
             android:title="Schedule"/>
     </group>
     <group android:id="@+id/navigationDrawer_areas_group">
-
+        <item
+            android:id="@+id/TestArea1"
+            android:title="Area1"/>
+        <item
+            android:id="@+id/TestArea2"
+            android:title="Area2"/>
     </group>
 </menu>
