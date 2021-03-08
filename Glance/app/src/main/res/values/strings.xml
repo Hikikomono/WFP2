@@ -14,4 +14,6 @@
     <string name="inbox">Inbox</string>
     <string name="schedule_for_today">Schedule for Today</string>
     <string name="habits">Habits</string>
+    <string name="make_habit">Make Habit</string>
+    <string name="icon_representing_area">Icon representing Area</string>
 </resources>
