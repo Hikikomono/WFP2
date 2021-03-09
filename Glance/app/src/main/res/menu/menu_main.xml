@@ -8,6 +8,6 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action"
-        android:title="TODO" />
+        android:id="@+id/action_areas"
+        android:title="@string/action_areas" />
 </menu>

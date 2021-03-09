@@ -101,6 +101,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/layout_edge_top_left_white"
         android:paddingStart="12dp"
+        android:paddingEnd="0dp"
         android:paddingTop="12dp"
         android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

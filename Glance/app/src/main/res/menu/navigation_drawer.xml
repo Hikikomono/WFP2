@@ -3,23 +3,23 @@
     <group android:id="@+id/navigationDrawer_pages_group">
         <item
             android:id="@+id/InboxMenu"
-            android:title="Inbox"/>
+            android:title="@string/inbox"/>
         <item
             android:id="@+id/TodayMenu"
-            android:title="Today"/>
+            android:title="@string/today"/>
         <item
             android:id="@+id/HabitsMenu"
-            android:title="Habits"/>
+            android:title="@string/habits"/>
         <item
             android:id="@+id/ScheduleMenu"
-            android:title="Schedule"/>
+            android:title="@string/schedule"/>
     </group>
     <group android:id="@+id/navigationDrawer_areas_group">
         <item
             android:id="@+id/TestArea1"
-            android:title="Area1"/>
+            android:title="Example Area1"/>
         <item
             android:id="@+id/TestArea2"
-            android:title="Area2"/>
+            android:title="Example Area2"/>
     </group>
 </menu>
