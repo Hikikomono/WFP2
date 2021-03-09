@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
+            android:contentDescription="@string/icon_representing_area"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_inventory_black_48dp"
-            android:contentDescription="@string/icon_representing_area" />
+            app:srcCompat="@drawable/baseline_inventory_black_48dp" />
 
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/areas_spinner"
@@ -29,11 +29,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginEnd="28dp"
+            android:spinnerMode="dropdown"
             app:layout_constraintBottom_toBottomOf="@id/areaIcon"
             app:layout_constraintStart_toEndOf="@id/areaIcon"
-            app:layout_constraintTop_toTopOf="@id/areaIcon"
-            android:spinnerMode="dropdown"
-            />
+            app:layout_constraintTop_toTopOf="@id/areaIcon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -48,12 +47,12 @@
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="24dp"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/make_habit"
             android:textSize="26sp"
-            android:text="@string/make_habit" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -65,39 +64,35 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInput_title_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
+            android:hint="Title"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:hint="Enter Title here"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:counterEnabled="true"
-            app:counterMaxLength="25">
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInput_description_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textInput_title_layout"
             android:hint="Description"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:counterEnabled="true"
-            app:counterMaxLength="60">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textInput_title_layout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
