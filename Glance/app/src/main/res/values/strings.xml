@@ -16,4 +16,6 @@
     <string name="habits">Habits</string>
     <string name="make_habit">Make Habit</string>
     <string name="icon_representing_area">Icon representing Area</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
 </resources>
