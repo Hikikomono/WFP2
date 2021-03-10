@@ -64,16 +64,27 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/baseline_inventory_black_48dp" />
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/areas_spinner"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/area_dropdown_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginEnd="28dp"
-            android:spinnerMode="dropdown"
+            android:layout_marginEnd="14dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             app:layout_constraintBottom_toBottomOf="@id/areaIcon"
             app:layout_constraintStart_toEndOf="@id/areaIcon"
-            app:layout_constraintTop_toTopOf="@id/areaIcon" />
+            app:layout_constraintTop_toTopOf="@id/areaIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Area">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:text="example content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
