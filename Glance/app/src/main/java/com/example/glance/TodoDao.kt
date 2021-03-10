@@ -17,12 +17,12 @@ interface TodoDao {
     fun getAllTodoFromAreaCompleted(area: String) : Flow<List<Todo>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertAll(todo: Todo)
+    fun insert(todo: Todo)
 
-    @Update
+    @Update(onConflict =  OnConflictStrategy.IGNORE)
     fun updateTodo(todo: Todo)
 
-    @Query ("UPDATE todo_table SET completed = 'true' WHERE id = :id")
+    @Query("UPDATE todo_table SET completed = 'true' WHERE id = :id")
     fun updateSetTodoCompleted(id: Int)
 
     @Query ("UPDATE todo_table SET area = :newArea WHERE id = :id")
