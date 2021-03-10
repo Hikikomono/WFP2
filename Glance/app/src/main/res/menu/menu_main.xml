@@ -11,6 +11,6 @@
         android:id="@+id/action_areas"
         android:title="@string/action_areas" />
     <item
-        android:id="action_tags"
+        android:id="@+id/action_tags"
         android:title="@string/tags" />
 </menu>
