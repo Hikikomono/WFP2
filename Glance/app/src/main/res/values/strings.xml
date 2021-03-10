@@ -13,14 +13,11 @@
     <string name="today">Today</string>
     <string name="inbox">Inbox</string>
     <string name="schedule_for_today">Schedule for Today</string>
-    <string name="habits">Habits</string>
     <string name="make_habit">Make Habit</string>
     <string name="icon_representing_area">Icon representing Area</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="action_areas">Areas</string>
-    <string name="inbox">Inbox</string>
-    <string name="today">Today</string>
     <string name="habits">Habits</string>
     <string name="schedule">Schedule</string>
     <string name="area">Area</string>
