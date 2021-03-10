@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="14dp"
             android:layout_marginStart="28dp"
-            android:hint="Area"
+            android:hint="@string/area"
             app:layout_constraintBottom_toBottomOf="@id/areaIcon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/areaIcon"

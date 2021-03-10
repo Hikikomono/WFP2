@@ -23,4 +23,6 @@
     <string name="today">Today</string>
     <string name="habits">Habits</string>
     <string name="schedule">Schedule</string>
+    <string name="area">Area</string>
+    <string name="tags">Tags (WIP)</string>
 </resources>
