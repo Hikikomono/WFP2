@@ -66,23 +66,22 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/area_dropdown_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginEnd="14dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="28dp"
+            android:hint="Area"
             app:layout_constraintBottom_toBottomOf="@id/areaIcon"
-            app:layout_constraintStart_toEndOf="@id/areaIcon"
-            app:layout_constraintTop_toTopOf="@id/areaIcon"
             app:layout_constraintEnd_toEndOf="parent"
-            android:hint="Area">
+            app:layout_constraintStart_toEndOf="@id/areaIcon"
+            app:layout_constraintTop_toTopOf="@id/areaIcon">
 
             <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
-                android:text="example content"
-                />
+                android:text="example content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
