@@ -24,6 +24,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInput_title_inputField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -41,6 +42,7 @@
             app:layout_constraintTop_toBottomOf="@id/textInput_title_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInput_description_inputField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -78,6 +80,7 @@
             app:layout_constraintTop_toTopOf="@id/areaIcon">
 
             <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/area_dropdown_menu_TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
