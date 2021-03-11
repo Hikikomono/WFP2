@@ -3,12 +3,13 @@
     package="com.example.glance">
 
     <uses-sdk
+        android:maxSdkVersion="29"
         android:minSdkVersion="26"
-        android:targetSdkVersion="29"
-        android:maxSdkVersion="29"/>
+        android:targetSdkVersion="29" />
 
     <application
         android:allowBackup="true"
+        android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
