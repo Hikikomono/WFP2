@@ -7,4 +7,10 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_areas"
+        android:title="@string/action_areas" />
+    <item
+        android:id="@+id/action_tags"
+        android:title="@string/tags" />
 </menu>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/navigationDrawer_pages_group">
+        <item
+            android:id="@+id/InboxMenu"
+            android:title="@string/inbox"/>
+        <item
+            android:id="@+id/TodayMenu"
+            android:title="@string/today"/>
+        <item
+            android:id="@+id/HabitsMenu"
+            android:title="@string/habits"/>
+        <item
+            android:id="@+id/ScheduleMenu"
+            android:title="@string/schedule"/>
+    </group>
+    <group android:id="@+id/navigationDrawer_areas_group">
+        <item
+            android:id="@+id/TestArea1"
+            android:title="Example Area1"/>
+        <item
+            android:id="@+id/TestArea2"
+            android:title="Example Area2"/>
+    </group>
+</menu>
