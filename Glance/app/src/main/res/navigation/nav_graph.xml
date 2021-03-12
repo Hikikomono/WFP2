@@ -17,11 +17,13 @@
     </fragment>
     <fragment
         android:id="@+id/EditScreenFragment"
+        android:name="com.example.glance.fragments.EditTodoFragment"
         tools:layout="@layout/edit_screen">
     </fragment>
     <fragment
         android:id="@+id/taskListFragment"
-        tools:layout="@layout/tasklist_view">
+        android:name="com.example.glance.fragments.TodoListFragment"
+        tools:layout="@layout/todo_list_view">
         <action
             android:id="@+id/action_taskListFragment_to_EditScreenFragment"
             app:destination="@id/EditScreenFragment" />

@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.glance.R
 
-class OverviewFragment : Fragment() {
+class EditTodoFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.overview_screen, container, false)
+        return inflater.inflate(R.layout.edit_screen, container, false)
     }
 }
