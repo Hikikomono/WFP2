@@ -29,4 +29,5 @@ ext{
     roomVersion = '2.2.6'
     coroutines = '1.4.2'
     lifecycleVersion = '2.3.0'
+    activityVersion = '1.2.1'
 }
