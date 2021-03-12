@@ -6,7 +6,7 @@
     app:startDestination="@id/OverviewFragment">
 
     <activity
-        android:id="@+id/topAppBarFragment"
+        android:id="@+id/MainActivityFragment"
         android:name="com.example.glance.MainActivity"
         tools:layout="@layout/top_bar">
     </activity>
