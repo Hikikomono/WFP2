@@ -3,26 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/OverviewFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.glance.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/topAppBarFragment"
+        tools:layout="@layout/top_bar">
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.glance.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/OverviewFragment"
+        android:name="com.example.glance.MainActivity"
+        tools:layout="@layout/overview_screen">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_OverviewFragment_to_EditScreenFragment"
+            app:destination="@id/EditScreenFragment" />
+        <action
+            android:id="@+id/action_OverviewFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/EditScreenFragment"
+        tools:layout="@layout/edit_screen">
+    </fragment>
+    <fragment
+        android:id="@+id/taskListFragment"
+        tools:layout="@layout/tasklist_view">
+        <action
+            android:id="@+id/action_taskListFragment_to_EditScreenFragment"
+            app:destination="@id/EditScreenFragment" />
     </fragment>
 </navigation>
