@@ -24,6 +24,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInput_title_inputField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -41,10 +42,30 @@
             app:layout_constraintTop_toBottomOf="@id/textInput_title_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInput_description_inputField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/makeHabit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/description_layout">
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/make_habit"
+            android:textSize="26sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -78,6 +99,7 @@
             app:layout_constraintTop_toTopOf="@id/areaIcon">
 
             <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/area_dropdown_menu_TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
@@ -88,21 +110,67 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/makeHabit_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/description_layout">
+        app:layout_constraintTop_toBottomOf="@id/area_layout"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        >
 
-        <CheckBox
-            android:id="@+id/checkBox"
+        <ImageView
+            android:id="@+id/when_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/make_habit"
-            android:textSize="26sp"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/when"
+            android:layout_marginStart="24dp"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Put Date Here"
+            app:layout_constraintStart_toEndOf="@id/when_icon"
+            app:layout_constraintTop_toTopOf="@id/when_icon"
+            app:layout_constraintBottom_toBottomOf="@id/when_icon"
+            android:layout_marginStart="24dp"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/tag_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/when_icon"
+            app:layout_constraintTop_toBottomOf="@id/when_icon"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/tag"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Put Tag-Title Here"
+            app:layout_constraintStart_toEndOf="@id/tag_icon"
+            app:layout_constraintTop_toTopOf="@id/tag_icon"
+            app:layout_constraintBottom_toBottomOf="@id/tag_icon"
+            android:layout_marginStart="24dp"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/deadline_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tag_icon"
+            app:layout_constraintTop_toBottomOf="@id/tag_icon"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/deadline"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Put Deadline Here"
+            app:layout_constraintStart_toEndOf="@id/deadline_icon"
+            app:layout_constraintTop_toTopOf="@id/deadline_icon"
+            app:layout_constraintBottom_toBottomOf="@id/deadline_icon"
+            android:layout_marginStart="24dp"
+            android:textColor="@color/black"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
