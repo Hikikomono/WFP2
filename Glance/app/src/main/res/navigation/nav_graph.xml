@@ -5,14 +5,13 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/OverviewFragment">
 
-    <fragment
+    <activity
         android:id="@+id/topAppBarFragment"
+        android:name="com.example.glance.MainActivity"
         tools:layout="@layout/top_bar">
-
-    </fragment>
+    </activity>
     <fragment
         android:id="@+id/OverviewFragment"
-        android:name="com.example.glance.MainActivity"
         tools:layout="@layout/overview_screen">
         <action
             android:id="@+id/action_OverviewFragment_to_EditScreenFragment"
