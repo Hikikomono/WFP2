@@ -2,8 +2,12 @@ package com.example.glance
 
 import android.app.Application
 import androidx.room.RoomDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
 
 class TodoApplication : Application() {
-    val database by lazy {TodoRoomDatabase.getDatabase(this)}
+    val applicationScope = CoroutineScope(SupervisorJob())
+
+    val database by lazy {TodoRoomDatabase.getDatabase(this, applicationScope)}
     val repositry by lazy {TodoRepository(database.todoDao())}
 }
