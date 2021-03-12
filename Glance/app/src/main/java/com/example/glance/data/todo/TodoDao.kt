@@ -1,4 +1,4 @@
-package com.example.glance.data
+package com.example.glance.data.todo
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 

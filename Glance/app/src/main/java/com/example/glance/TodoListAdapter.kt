@@ -1,4 +1,4 @@
-package com.example.glance.data
+package com.example.glance
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import android.widget.CheckBox
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.glance.R
+import com.example.glance.data.todo.Todo
 
 class TodoListAdapter : ListAdapter<Todo, TodoListAdapter.TodoViewHolder>(TodoComparator()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {

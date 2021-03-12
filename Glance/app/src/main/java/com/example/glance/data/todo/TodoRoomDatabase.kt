@@ -1,4 +1,4 @@
-package com.example.glance.data
+package com.example.glance.data.todo
 
 import android.content.Context
 import androidx.room.Database

@@ -1,4 +1,4 @@
-package com.example.glance.data
+package com.example.glance.data.todo
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
