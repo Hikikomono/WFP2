@@ -1,13 +1,13 @@
-package com.example.glance
+package com.example.glance.data
 
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.glance.R
 
 class TodoListAdapter : ListAdapter<Todo, TodoListAdapter.TodoViewHolder>(TodoComparator()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
@@ -27,7 +27,7 @@ class TodoListAdapter : ListAdapter<Todo, TodoListAdapter.TodoViewHolder>(TodoCo
         }
 
         companion object {
-            fun create(parent: ViewGroup) : TodoViewHolder{
+            fun create(parent: ViewGroup) : TodoViewHolder {
                 val view: View = LayoutInflater.from(parent.context)
                     .inflate(R.layout.single_task, parent, false)
                 return TodoViewHolder(view)

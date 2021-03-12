@@ -1,4 +1,4 @@
-package com.example.glance
+package com.example.glance.data
 
 import android.content.Context
 import androidx.room.Database
@@ -45,7 +45,7 @@ abstract class TodoRoomDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE : TodoRoomDatabase? = null
 
-        fun getDatabase (context: Context, scope: CoroutineScope) : TodoRoomDatabase{
+        fun getDatabase (context: Context, scope: CoroutineScope) : TodoRoomDatabase {
             // if the INSTANCE is not null, then return it,
             // if it is, then create the database
             return INSTANCE ?: synchronized(this){
