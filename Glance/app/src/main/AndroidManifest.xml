@@ -8,6 +8,7 @@
         android:targetSdkVersion="29" />
 
     <application
+        android:name=".TodoApplication"
         android:allowBackup="true"
         android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
