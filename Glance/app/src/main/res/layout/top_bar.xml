@@ -27,11 +27,20 @@
                 app:menu="@menu/menu_main"
                 app:navigationIcon="@drawable/baseline_menu_white_36dp"
                 app:title="This is a Title">
-                <!-- todo icon is not transparent -->
 
             </com.google.android.material.appbar.MaterialToolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <!-- Screen content -->
         <!-- Use app:layout_behavior="@string/appbar_scrolling_view_behavior" to fit below top app bar -->
