@@ -1,4 +1,4 @@
-package com.example.glance
+package com.example.glance.data
 
 import androidx.annotation.WorkerThread
 import kotlinx.coroutines.flow.Flow

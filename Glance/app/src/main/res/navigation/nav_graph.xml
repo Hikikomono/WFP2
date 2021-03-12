@@ -6,7 +6,7 @@
     app:startDestination="@id/OverviewFragment">
     <fragment
         android:id="@+id/OverviewFragment"
-        android:name="com.example.glance.OverviewFragment"
+        android:name="com.example.glance.fragments.OverviewFragment"
         tools:layout="@layout/overview_screen">
         <action
             android:id="@+id/action_OverviewFragment_to_EditScreenFragment"
