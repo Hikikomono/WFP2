@@ -9,5 +9,5 @@ class TodoApplication : Application() {
     val applicationScope = CoroutineScope(SupervisorJob())
 
     val database by lazy {TodoRoomDatabase.getDatabase(this, applicationScope)}
-    val repositry by lazy {TodoRepository(database.todoDao())}
+    val repository by lazy {TodoRepository(database.todoDao())}
 }

@@ -16,6 +16,7 @@ class TodoListAdapter : ListAdapter<Todo, TodoListAdapter.TodoViewHolder>(TodoCo
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val current = getItem(position)
+        holder.bind(current.title)
     }
 
     class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){

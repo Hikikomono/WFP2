@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Database(entities = arrayOf(Todo::class), version = 1, exportSchema = false)
@@ -18,7 +19,7 @@ abstract class TodoRoomDatabase : RoomDatabase() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
             INSTANCE?.let { database ->
-                scope.launch {
+                scope.launch(Dispatchers.IO) {
                     populateDatabase(database.todoDao())
                 }
             }
@@ -53,7 +54,9 @@ abstract class TodoRoomDatabase : RoomDatabase() {
                     TodoRoomDatabase::class.java,
                     "todo_database"
                 //TODO Remove .addCallback
-                ).addCallback(TodoDatabaseCallback(scope)).build()
+                )
+                    .addCallback(TodoDatabaseCallback(scope))
+                    .build()
                 INSTANCE = instance
 
                 //return instance
