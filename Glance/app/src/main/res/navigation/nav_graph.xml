@@ -4,14 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/OverviewFragment">
-
-    <activity
-        android:id="@+id/MainActivityFragment"
-        android:name="com.example.glance.MainActivity"
-        tools:layout="@layout/top_bar">
-    </activity>
     <fragment
         android:id="@+id/OverviewFragment"
+        android:name="com.example.glance.OverviewFragment"
         tools:layout="@layout/overview_screen">
         <action
             android:id="@+id/action_OverviewFragment_to_EditScreenFragment"
