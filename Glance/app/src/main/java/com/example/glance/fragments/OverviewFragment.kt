@@ -29,11 +29,15 @@ class OverviewFragment : Fragment() {
         
         //Navigate to EditTodoFragment
         binding.floatingActionButton.setOnClickListener { view: View ->
+
             this.findNavController().navigate(R.id.action_OverviewFragment_to_EditScreenFragment)
+        }
+        binding.todayLayout.setOnClickListener{ view: View->
+            this.findNavController().navigate(R.id.action_OverviewFragment_to_TodoListFragment)
         }
 
         //Navigate to TodoListFragment
-        binding.inboxLayout.setOnClickListener { view1 : View ->
+        binding.inboxLayout.setOnClickListener { view : View ->
             this.findNavController().navigate(R.id.action_OverviewFragment_to_TodoListFragment)
         }
 
