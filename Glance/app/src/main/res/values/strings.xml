@@ -23,4 +23,6 @@
     <string name="area">Area</string>
     <string name="tags">Tags (WIP)</string>
     <string name="view">View</string>
+    <string name="openDrawerDesc">openDrawer</string>
+    <string name="closeDrawerDesc">closeDrawer</string>
 </resources>
