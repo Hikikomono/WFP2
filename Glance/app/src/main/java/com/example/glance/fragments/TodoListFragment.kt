@@ -1,15 +1,12 @@
 package com.example.glance.fragments
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.glance.R
@@ -18,14 +15,13 @@ import com.example.glance.TodoListAdapter
 import com.example.glance.data.todo.TodoViewModel
 import com.example.glance.data.todo.TodoViewModelFactory
 import com.example.glance.databinding.*
-import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 
 
 class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
     private lateinit var binding: TodoListViewBinding
+    private lateinit var adapter: TodoListAdapter
     private val todoViewModel: TodoViewModel by activityViewModels {
         TodoViewModelFactory((context?.applicationContext as TodoApplication).repository)
     }
@@ -39,14 +35,13 @@ class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
 
         //Init RecylcerView
         val recyclerView = binding.todosRecyclerView
-        val adapter = TodoListAdapter(this)
+        adapter = TodoListAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         todoViewModel.allTodos.observe(viewLifecycleOwner, Observer {  todos ->
             todos.let { adapter.submitList(it) }
         } )
-
         return binding.root
     }
 
@@ -62,7 +57,8 @@ class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
     //imp. OnItemClickListener method
     override fun onItemClick(position: Int) {
         //TODO remove Toast (just for testing)
-        Toast.makeText(context, "Item $position clicked", Toast.LENGTH_SHORT).show()
+        var itemDbKey = adapter.currentList.get(position).id
+        Toast.makeText(context, "Item $position clicked with ItemId $itemDbKey", Toast.LENGTH_SHORT).show()
         this.findNavController().navigate(R.id.action_TodoListFragment_to_EditScreenFragment)
     }
 }

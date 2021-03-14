@@ -20,12 +20,14 @@ class TodoListAdapter(private val listener: OnItemClickListener) : ListAdapter<T
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val current = getItem(position)
-        holder.bind(current.title, current.area)
+        holder.bind(current.title, current.area, current.id)
+
     }
 
      inner class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
          private val todoItemTitle: CheckBox = itemView.findViewById(R.id.singleTaskView)
          private val todoItemArea: TextView = itemView.findViewById(R.id.singleTaskView_area_title)
+         private var itemId = 0
 
          //Code for OnClickListener
          init {
@@ -40,9 +42,11 @@ class TodoListAdapter(private val listener: OnItemClickListener) : ListAdapter<T
                 listener.onItemClick(position)
          }
 
-         fun bind(textTitle: String?, textArea: String?) {
+         fun bind(textTitle: String?, textArea: String?, itemId: Int) {
              todoItemTitle.text = textTitle
              todoItemArea.text = textArea
+             this.itemId = itemId
+
          }
      }
     //could be solved via Lambda
