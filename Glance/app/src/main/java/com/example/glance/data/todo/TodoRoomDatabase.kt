@@ -4,12 +4,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.*
 
 @Database(entities = arrayOf(Todo::class), version = 1, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class TodoRoomDatabase : RoomDatabase() {
 
     abstract fun todoDao() : TodoDao
@@ -25,17 +28,17 @@ abstract class TodoRoomDatabase : RoomDatabase() {
             }
         }
         suspend fun populateDatabase(todoDao: TodoDao){
-            var todo = Todo(50,"Inbox", "First Todo", "", false)
+            var todo = Todo(50,"Inbox", "First Todo", "", Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20),  false)
             todoDao.insert(todo)
-            todo = Todo(51,"Inbox", "Second Todo", "", false)
+            todo = Todo(51,"Inbox", "Second Todo", "", Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20),  false)
             todoDao.insert(todo)
-            todo = Todo(52,"Inbox", "Third Todo", "", false)
+            todo = Todo(52,"Inbox", "Third Todo", "", Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20),  false)
             todoDao.insert(todo)
-            todo = Todo(53,"Inbox", "Fourth Todo", "", false)
+            todo = Todo(53,"Inbox", "Fourth Todo", "", Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20),  false)
             todoDao.insert(todo)
-            todo = Todo(54,"Inbox", "Fifth Todo", "", false)
+            todo = Todo(54,"Inbox", "Fifth Todo", "", Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20),  false)
             todoDao.insert(todo)
-            todo = Todo(55,"Inbox", "Sixth Todo", "", false)
+            todo = Todo(55,"Inbox", "Sixth Todo", "", Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20), Date(2020, 4, 20),  false)
             todoDao.insert(todo)
         }
     }
