@@ -67,6 +67,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_settings -> {
+                Toast.makeText(this, "WIP", Toast.LENGTH_SHORT).show()
+            }
+            R.id.action_areas -> {
+                Toast.makeText(this, "Not implemented!", Toast.LENGTH_SHORT).show()
+            }
+            R.id.action_tags -> {
+                Toast.makeText(this, "WIP", Toast.LENGTH_SHORT).show()
+            }
+        }
+        return true
+    }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
