@@ -3,6 +3,8 @@ package com.example.glance
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
@@ -31,10 +33,18 @@ class MainActivity : AppCompatActivity() {
 
         val navController = host.navController
 
-        val appBarConfiguration = AppBarConfiguration(navController.graph, binding.drawerView)
+        val drawer = binding.drawerView
+        val toolbar: Toolbar = binding.topAppBar
+
+        val appBarConfiguration = AppBarConfiguration(navController.graph, drawer)
         setSupportActionBar(binding.topAppBar)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        val toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.openDrawerDesc, R.string.closeDrawerDesc)
+        drawer.addDrawerListener(toggle)
     }
+
+
 
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.nav_host_fragment).navigateUp()
