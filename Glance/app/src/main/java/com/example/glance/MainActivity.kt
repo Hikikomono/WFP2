@@ -2,10 +2,12 @@ package com.example.glance
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -50,20 +52,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
         when (item.itemId) {
             R.id.InboxMenu -> {
+                navController.navigate(R.id.action_OverviewFragment_to_TodoListFragment)
                 Toast.makeText(this, "Inbox it is then", Toast.LENGTH_SHORT).show()
             }
             R.id.TodayMenu -> {
+                navController.navigate(R.id.action_OverviewFragment_to_TodoListFragment)
                 Toast.makeText(this, "Today it is then", Toast.LENGTH_SHORT).show()
             }
             R.id.HabitsMenu -> {
+                navController.navigate(R.id.action_OverviewFragment_to_TodoListFragment)
                 Toast.makeText(this, "Habits it is then", Toast.LENGTH_SHORT).show()
             }
             R.id.ScheduleMenu -> {
-                Toast.makeText(this, "Schedule it is then", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "WIP", Toast.LENGTH_SHORT).show()
             }
         }
+        binding.drawerView.closeDrawer(GravityCompat.START)
         return true
     }
 
