@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -16,14 +17,16 @@ class TodoListAdapter : ListAdapter<Todo, TodoListAdapter.TodoViewHolder>(TodoCo
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val current = getItem(position)
-        holder.bind(current.title)
+        holder.bind(current.title, current.area)
     }
 
     class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         private val todoItemView: CheckBox = itemView.findViewById(R.id.singleTaskView)
+        private val todoItemArea: TextView = itemView.findViewById(R.id.singleTaskView_area_title)
 
-        fun bind(text: String?){
-            todoItemView.text = text
+        fun bind(textTitle: String?, textArea: String?){
+            todoItemView.text = textTitle
+            todoItemArea.text = textArea
         }
 
         companion object {
