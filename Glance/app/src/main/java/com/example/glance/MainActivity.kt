@@ -8,12 +8,19 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.view.GravityCompat
+import androidx.activity.viewModels
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.glance.data.todo.TodoViewModel
+import com.example.glance.data.todo.TodoViewModelFactory
 import com.example.glance.databinding.*
 import com.google.android.material.navigation.NavigationView
 
@@ -21,6 +28,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var binding: TopBarBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    private val todoViewModel: TodoViewModel by viewModels {
+        TodoViewModelFactory((this.applicationContext as TodoApplication).repository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -21,6 +21,10 @@
         android:label="Edit"
         android:name="com.example.glance.fragments.EditTodoFragment"
         tools:layout="@layout/edit_screen">
+        <argument
+            android:name="itemId"
+            app:argType="integer"
+            android:defaultValue="-1" />
     </fragment>
     <fragment
         android:id="@+id/TodoListFragment"
