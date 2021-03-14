@@ -10,9 +10,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.glance.data.todo.Todo
 
-class TodoListAdapter : ListAdapter<Todo, TodoListAdapter.TodoViewHolder>(TodoComparator()) {
+class TodoListAdapter(private val listener: OnItemClickListener) : ListAdapter<Todo, TodoListAdapter.TodoViewHolder>(TodoComparator()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
-        return TodoViewHolder.create(parent)
+        val itemView: View = LayoutInflater.from(parent.context)
+            .inflate(R.layout.single_task, parent, false)
+        return TodoViewHolder(itemView)
+
     }
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
@@ -20,23 +23,44 @@ class TodoListAdapter : ListAdapter<Todo, TodoListAdapter.TodoViewHolder>(TodoCo
         holder.bind(current.title, current.area)
     }
 
-    class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        private val todoItemTitle: CheckBox = itemView.findViewById(R.id.singleTaskView)
-        private val todoItemArea: TextView = itemView.findViewById(R.id.singleTaskView_area_title)
+     inner class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+         private val todoItemTitle: CheckBox = itemView.findViewById(R.id.singleTaskView)
+         private val todoItemArea: TextView = itemView.findViewById(R.id.singleTaskView_area_title)
 
-        fun bind(textTitle: String?, textArea: String?){
-            todoItemTitle.text = textTitle
-            todoItemArea.text = textArea
-        }
+         //Code for OnClickListener
+         init {
+             itemView.setOnClickListener(this)
+         }
 
+         override fun onClick(v: View?) {
+             //define what happens if itemView is clicked
+             val position = adapterPosition
+             //check if Position is still valid (in case of Animation e.g.)
+             if (position != RecyclerView.NO_POSITION)
+                listener.onItemClick(position)
+         }
+
+         fun bind(textTitle: String?, textArea: String?) {
+             todoItemTitle.text = textTitle
+             todoItemArea.text = textArea
+         }
+     }
+    //could be solved via Lambda
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
+/*
         companion object {
             fun create(parent: ViewGroup) : TodoViewHolder {
-                val view: View = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.single_task, parent, false)
-                return TodoViewHolder(view)
+
             }
         }
     }
+
+ */
+
+
+
 
     //TODO Comparator noch anpassen
     class TodoComparator : DiffUtil.ItemCallback<Todo>() {
@@ -48,5 +72,7 @@ class TodoListAdapter : ListAdapter<Todo, TodoListAdapter.TodoViewHolder>(TodoCo
             return oldItem.title == newItem.title
         }
     }
+
+
 }
 

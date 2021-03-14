@@ -24,7 +24,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 
 
-class TodoListFragment : Fragment() {
+class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
     private lateinit var binding: TodoListViewBinding
     private val todoViewModel: TodoViewModel by activityViewModels {
         TodoViewModelFactory((context?.applicationContext as TodoApplication).repository)
@@ -39,7 +39,7 @@ class TodoListFragment : Fragment() {
 
         //Init RecylcerView
         val recyclerView = binding.todosRecyclerView
-        val adapter = TodoListAdapter()
+        val adapter = TodoListAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
@@ -53,10 +53,16 @@ class TodoListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         //Navigate to EditScreen
         binding.floatingActionButton.setOnClickListener { view: View ->
             this.findNavController().navigate(R.id.action_TodoListFragment_to_EditScreenFragment)
         }
+    }
+
+    //imp. OnItemClickListener method
+    override fun onItemClick(position: Int) {
+        //TODO remove Toast (just for testing)
+        Toast.makeText(context, "Item $position clicked", Toast.LENGTH_SHORT).show()
+        this.findNavController().navigate(R.id.action_TodoListFragment_to_EditScreenFragment)
     }
 }
