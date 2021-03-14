@@ -1,7 +1,27 @@
-# Glance
+# Glance Iteration 1 (14. Mär 2021)
+## Layouts
+Here you can find a description of the functions of this app in the current development cycle.
+### Glance (Overview Screen)
+
+![](https://i.imgur.com/U46Qt1h.png)
+
+This screen displays all available locations where todos can be placed. One location is the *Inbox*. Here you can find any todo that does not meet any criteria to be placed in an other location. In *Today* you can find all todos that are due to today. The *Schedule for Today* area dons not show any todos. Instead calendar entries are being displayed that reflect what's up for today. In the *Habit* section you can find repeating todos. *Overdue* collects all todos that were already due and are late (hurry up).
+
+Every location has a counter that counts the total of current todos in the specific area.
+
+### Todos
+![](https://i.imgur.com/vaFjXWO.png)
+
+This view looks similar in every category that displays a list of todos. Every todo has a checkbox. If you are done with a todo simply tap on it to check it. Tapping the action (+) button allows you to add a new todo.
+
+### Edit a Todo
+
+![](https://i.imgur.com/Mqvierf.png)
+Here you can edit your todo. You can give it a title and a description. If your todo is repeating you can mark it as a habit. The icon below the habit checkbox shows the area where the todo should be placed. By tapping on the icons in the bottom right corner you can set more detailed information for your todo. Form left to right, the first one sets a due date. The next sets a tag. The icon with the flag allows you to set a deadline to your todo.
 
 
-# Glance Kick-Off
+# Glance Kick-Off (Aug 5, 2020)
+> Ideas for the overall goal after set amount of development cycles.
 [TOC]
 ## Main Focus
 + To-Dos
