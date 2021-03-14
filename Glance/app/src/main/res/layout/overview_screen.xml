@@ -17,7 +17,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/overdue_layout"
-                android:layout_width="350dp"
+                android:layout_width="0dp"
                 android:layout_height="@dimen/standard_bubble_height"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
@@ -88,13 +88,14 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/inbox_layout"
-                android:layout_width="160dp"
+                android:layout_width="0px"
                 android:layout_height="160dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/layout_edges_blue"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/today_layout"
                 app:layout_constraintTop_toBottomOf="@id/overdue_layout">
 
                 <TextView
@@ -156,14 +157,16 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/today_layout"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_width="0dp"
+                android:layout_height="0px"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginVertical="32dp"
                 android:background="@drawable/layout_edges_blue"
                 android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/inbox_layout"
-                app:layout_constraintTop_toBottomOf="@id/overdue_layout">
+                app:layout_constraintTop_toBottomOf="@id/overdue_layout"
+                app:layout_constraintBottom_toTopOf="@id/schedule_layout">
 
                 <TextView
                     android:id="@+id/today_count"
@@ -225,7 +228,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/schedule_layout"
-                android:layout_width="350dp"
+                android:layout_width="0dp"
                 android:layout_height="170dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
@@ -233,6 +236,7 @@
                 android:background="@drawable/layout_edges_blue"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/inbox_layout">
 
                 <TextView
@@ -297,7 +301,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/habits_layout"
-                android:layout_width="350dp"
+                android:layout_width="0dp"
                 android:layout_height="@dimen/standard_bubble_height"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="36dp"
@@ -305,6 +309,7 @@
                 android:background="@drawable/layout_edges_blue"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/schedule_layout">
 
                 <TextView
