@@ -12,8 +12,8 @@
             android:id="@+id/action_OverviewFragment_to_EditScreenFragment"
             app:destination="@id/EditScreenFragment" />
         <action
-            android:id="@+id/action_OverviewFragment_to_taskListFragment"
-            app:destination="@id/taskListFragment" />
+            android:id="@+id/action_OverviewFragment_to_TodoListFragment"
+            app:destination="@id/TodoListFragment" />
     </fragment>
     <fragment
         android:id="@+id/EditScreenFragment"
@@ -21,11 +21,11 @@
         tools:layout="@layout/edit_screen">
     </fragment>
     <fragment
-        android:id="@+id/taskListFragment"
+        android:id="@+id/TodoListFragment"
         android:name="com.example.glance.fragments.TodoListFragment"
         tools:layout="@layout/todo_list_view">
         <action
-            android:id="@+id/action_taskListFragment_to_EditScreenFragment"
+            android:id="@+id/action_TodoListFragment_to_EditScreenFragment"
             app:destination="@id/EditScreenFragment" />
     </fragment>
 </navigation>

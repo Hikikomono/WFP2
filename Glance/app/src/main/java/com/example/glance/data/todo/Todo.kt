@@ -6,7 +6,7 @@ import java.util.*
 
 @Entity(tableName = "todo_table")
 class Todo(
-        @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int,
+        @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int = 0,
         @ColumnInfo(name = "area", defaultValue = "inbox") val area : String,
         @ColumnInfo(name = "title") val title : String,
         @ColumnInfo(name = "description") val description : String?,
