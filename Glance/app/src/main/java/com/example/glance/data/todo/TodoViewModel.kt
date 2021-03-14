@@ -1,6 +1,7 @@
 package com.example.glance.data.todo
 
 import androidx.lifecycle.*
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class TodoViewModel(private val repository: TodoRepository) : ViewModel() {
@@ -14,7 +15,7 @@ class TodoViewModel(private val repository: TodoRepository) : ViewModel() {
 
 
     //Launching a new coroutine to insert the data in a non-blocking way
-    fun insert(todo: Todo) = viewModelScope.launch{
+    fun insert(todo: Todo) = GlobalScope.launch{
         repository.insert(todo)
     }
 }
