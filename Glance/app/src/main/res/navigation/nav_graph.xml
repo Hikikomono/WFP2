@@ -7,6 +7,7 @@
     <fragment
         android:id="@+id/OverviewFragment"
         android:name="com.example.glance.fragments.OverviewFragment"
+        android:label="Glance"
         tools:layout="@layout/overview_screen">
         <action
             android:id="@+id/action_OverviewFragment_to_EditScreenFragment"
@@ -17,12 +18,14 @@
     </fragment>
     <fragment
         android:id="@+id/EditScreenFragment"
+        android:label="Edit"
         android:name="com.example.glance.fragments.EditTodoFragment"
         tools:layout="@layout/edit_screen">
     </fragment>
     <fragment
         android:id="@+id/TodoListFragment"
         android:name="com.example.glance.fragments.TodoListFragment"
+        android:label="Todos"
         tools:layout="@layout/todo_list_view">
         <action
             android:id="@+id/action_TodoListFragment_to_EditScreenFragment"
