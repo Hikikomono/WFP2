@@ -12,6 +12,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.glance.R
 import com.example.glance.TodoApplication
 import com.example.glance.data.todo.Todo
@@ -40,6 +41,12 @@ class EditTodoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //init safeArgs variable
+        val args: EditTodoFragmentArgs by navArgs()
+
+        //TODO DELETE Toast ONLY FOR TESTING
+        Toast.makeText( context, "itemID: ${args.itemId}", Toast.LENGTH_SHORT).show()
+
 
         //TODO evtl. separat implementieren
         binding.areaIcon.setOnClickListener { view: View ->

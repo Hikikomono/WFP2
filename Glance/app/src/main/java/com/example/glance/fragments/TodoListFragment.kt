@@ -59,6 +59,6 @@ class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
         //TODO remove Toast (just for testing)
         var itemDbKey = adapter.currentList.get(position).id
         Toast.makeText(context, "Item $position clicked with ItemId $itemDbKey", Toast.LENGTH_SHORT).show()
-        this.findNavController().navigate(R.id.action_TodoListFragment_to_EditScreenFragment)
+        this.findNavController().navigate(TodoListFragmentDirections.actionTodoListFragmentToEditScreenFragment(itemDbKey))
     }
 }
