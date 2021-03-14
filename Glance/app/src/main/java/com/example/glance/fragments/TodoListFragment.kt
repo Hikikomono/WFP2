@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -18,13 +19,14 @@ import com.example.glance.data.todo.TodoViewModel
 import com.example.glance.data.todo.TodoViewModelFactory
 import com.example.glance.databinding.*
 import androidx.appcompat.app.AppCompatDialogFragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 
 
 class TodoListFragment : Fragment() {
     private lateinit var binding: TodoListViewBinding
-    private val todoViewModel: TodoViewModel by viewModels {
+    private val todoViewModel: TodoViewModel by activityViewModels {
         TodoViewModelFactory((context?.applicationContext as TodoApplication).repository)
     }
 
@@ -52,6 +54,7 @@ class TodoListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        //Navigate to EditScreen
         binding.floatingActionButton.setOnClickListener { view: View ->
             this.findNavController().navigate(R.id.action_TodoListFragment_to_EditScreenFragment)
         }

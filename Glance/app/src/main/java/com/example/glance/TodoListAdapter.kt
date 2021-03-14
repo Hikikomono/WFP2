@@ -21,11 +21,11 @@ class TodoListAdapter : ListAdapter<Todo, TodoListAdapter.TodoViewHolder>(TodoCo
     }
 
     class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        private val todoItemView: CheckBox = itemView.findViewById(R.id.singleTaskView)
+        private val todoItemTitle: CheckBox = itemView.findViewById(R.id.singleTaskView)
         private val todoItemArea: TextView = itemView.findViewById(R.id.singleTaskView_area_title)
 
         fun bind(textTitle: String?, textArea: String?){
-            todoItemView.text = textTitle
+            todoItemTitle.text = textTitle
             todoItemArea.text = textArea
         }
 

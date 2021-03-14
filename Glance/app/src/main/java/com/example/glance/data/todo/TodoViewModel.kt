@@ -10,6 +10,8 @@ class TodoViewModel(private val repository: TodoRepository) : ViewModel() {
     // - Repository is completely separated from the UI through the ViewModel.
     val allTodos : LiveData<List<Todo>> = repository.allTodos.asLiveData()
 
+    var tmpAreaName: String = ""
+
 
     //Launching a new coroutine to insert the data in a non-blocking way
     fun insert(todo: Todo) = viewModelScope.launch{
