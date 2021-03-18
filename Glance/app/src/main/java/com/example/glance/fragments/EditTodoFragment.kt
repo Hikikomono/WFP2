@@ -1,9 +1,6 @@
 package com.example.glance.fragments
 
 import android.os.Bundle
-import android.text.Editable
-import android.util.DebugUtils
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,11 +43,11 @@ class EditTodoFragment : Fragment() {
         //init safeArgs variable
 
 
-        //TODO DELETE Toast ONLY FOR TESTING
+
         val args: EditTodoFragmentArgs by navArgs()
         var itemId = args.itemId
 
-        if (itemId != -1){
+        if (itemId != -1) {
             todoViewModel.viewModelScope.launch {
                 var tmpTodo = todoViewModel.getTodoFromDatabase(args.itemId)
                 var title = tmpTodo.title
@@ -64,6 +61,7 @@ class EditTodoFragment : Fragment() {
             ).show()
         }
 
+        //OnClickListener for Insert/Update TodoItem
         //TODO evtl. separat implementieren
         binding.areaIcon.setOnClickListener { view: View ->
             if (itemId === -1) {
@@ -76,18 +74,19 @@ class EditTodoFragment : Fragment() {
                     false
                 )
                 todoViewModel.insert(todo)
-
             } else {
                 todoViewModel.viewModelScope.launch {
-                    var tmpTodo = todoViewModel.getTodoFromDatabase(args.itemId)
-                    var title = binding.textInputTitleInputField.toString()
-                    var description = binding.textInputDescriptionInputField.toString()
-                    tmpTodo.title = title
-                    tmpTodo.description = description
-                    todoViewModel.updateTodo(tmpTodo)
+                    var todo = todoViewModel.getTodoFromDatabase(args.itemId)
+                    var title = binding.textInputTitleInputField.text.toString()
+                    var description = binding.textInputDescriptionInputField.text.toString()
+                    todo.title = title
+                    todo.description = description
+                    todoViewModel.updateTodo(todo)
                 }
             }
             findNavController().navigateUp()
         }
+
+        //OnClickListener for: Delete TodoItem
     }
 }
