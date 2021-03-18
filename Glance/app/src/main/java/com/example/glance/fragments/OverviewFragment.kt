@@ -7,12 +7,14 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import com.example.glance.R
 import com.example.glance.TodoApplication
 import com.example.glance.data.todo.TodoViewModel
 import com.example.glance.data.todo.TodoViewModelFactory
 import com.example.glance.databinding.*
+import kotlinx.coroutines.launch
 
 
 class OverviewFragment : Fragment() {
@@ -34,10 +36,13 @@ class OverviewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        todoViewModel.viewModelScope.launch {
+            binding.inboxCount.setText(todoViewModel.getTodoAreaCount("Inbox").toString())
+        }
+
         
         //Navigate to EditTodoFragment
         binding.floatingActionButton.setOnClickListener { view: View ->
-
             this.findNavController().navigate(R.id.action_OverviewFragment_to_EditScreenFragment)
         }
 

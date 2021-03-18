@@ -27,5 +27,10 @@ class TodoRepository(private val todoDao: TodoDao) {
         todoDao.deleteTodo(todo)
     }
 
+    @WorkerThread
+    suspend fun getTodoAreaCount(area: String): Int{
+        return todoDao.getTodoAreaCount(area)
+    }
+
 
 }

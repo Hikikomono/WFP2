@@ -12,12 +12,15 @@ class TodoViewModel(private val repository: TodoRepository) : ViewModel() {
     // - Repository is completely separated from the UI through the ViewModel.
     val allTodos : LiveData<List<Todo>> = repository.allTodos.asLiveData()
 
-
     //get a specifict TodoObject
     suspend fun getTodoFromDatabase(id: Int) : Todo{
         return repository.getTodo(id)
     }
 
+    //get the amount of Items in a specific Area
+    suspend fun getTodoAreaCount(area: String): Int{
+        return repository.getTodoAreaCount(area)
+    }
 
     //Launching a new coroutine to insert the data in a non-blocking way
     fun insert(todo: Todo) = viewModelScope.launch{
@@ -31,6 +34,8 @@ class TodoViewModel(private val repository: TodoRepository) : ViewModel() {
     suspend fun deleteTodo(todo: Todo){
         repository.delteTodo(todo)
     }
+
+
 }
 
 

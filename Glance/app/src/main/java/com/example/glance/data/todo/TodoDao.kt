@@ -1,4 +1,5 @@
 package com.example.glance.data.todo
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
@@ -33,4 +34,8 @@ interface TodoDao {
 
     @Delete
     suspend fun deleteTodo(todo: Todo)
+
+    //TODO als LiveData? implementieren um Live Updates zu bekommen
+    @Query("SELECT COUNT(*) FROM todo_table WHERE area = :area")
+    suspend fun getTodoAreaCount(area: String) : Int
 }
