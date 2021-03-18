@@ -22,5 +22,10 @@ class TodoRepository(private val todoDao: TodoDao) {
         todoDao.updateTodo(todo)
     }
 
+    @WorkerThread
+    suspend fun delteTodo(todo: Todo){
+        todoDao.deleteTodo(todo)
+    }
+
 
 }

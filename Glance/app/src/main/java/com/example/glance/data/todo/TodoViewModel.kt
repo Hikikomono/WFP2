@@ -27,6 +27,10 @@ class TodoViewModel(private val repository: TodoRepository) : ViewModel() {
     suspend fun updateTodo(todo: Todo){
         repository.updateTodo(todo)
     }
+
+    suspend fun deleteTodo(todo: Todo){
+        repository.delteTodo(todo)
+    }
 }
 
 

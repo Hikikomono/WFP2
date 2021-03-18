@@ -32,5 +32,5 @@ interface TodoDao {
     fun updateTodoArea(id: Int, newArea: String)
 
     @Delete
-    fun deleteTodo(todo: Todo)
+    suspend fun deleteTodo(todo: Todo)
 }

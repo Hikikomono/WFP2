@@ -88,5 +88,12 @@ class EditTodoFragment : Fragment() {
         }
 
         //OnClickListener for: Delete TodoItem
+        binding.deleteImageButton.setOnClickListener{view: View ->
+            todoViewModel.viewModelScope.launch {
+                var todo = todoViewModel.getTodoFromDatabase(args.itemId)
+                todoViewModel.deleteTodo(todo)
+            }
+            findNavController().navigateUp()
+        }
     }
 }
