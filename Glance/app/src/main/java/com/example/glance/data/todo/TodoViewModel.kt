@@ -11,6 +11,14 @@ class TodoViewModel(private val repository: TodoRepository) : ViewModel() {
     //   the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
     val allTodos : LiveData<List<Todo>> = repository.allTodos.asLiveData()
+    var allTodosFromArea: LiveData<List<Todo>>? = null
+
+    fun getAllTodoFromArea(area: String){
+        viewModelScope.launch {
+            allTodosFromArea = repository.getAllTodoFromArea(area).asLiveData()
+        }
+    }
+
 
     //get a specifict TodoObject
     suspend fun getTodoFromDatabase(id: Int) : Todo{

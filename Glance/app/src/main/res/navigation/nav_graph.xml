@@ -25,6 +25,10 @@
             android:name="itemId"
             app:argType="integer"
             android:defaultValue="-1" />
+        <argument
+            android:name="area"
+            app:argType="string"
+            android:defaultValue="Inbox" />
     </fragment>
     <fragment
         android:id="@+id/TodoListFragment"
@@ -37,6 +41,6 @@
         <argument
             android:name="areaName"
             app:argType="string"
-            app:nullable="true" />
+            android:defaultValue="none" />
     </fragment>
 </navigation>

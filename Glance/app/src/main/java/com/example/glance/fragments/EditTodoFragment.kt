@@ -57,7 +57,10 @@ class EditTodoFragment : Fragment() {
             Toast.makeText(
                 context, "itemID: ${args.itemId}", Toast.LENGTH_SHORT
             ).show()
+        }else{
+            binding.areaDropdownMenuTextView.setText(args.area)
         }
+
 
         //OnClickListener for Insert/Update TodoItem
         //TODO evtl. separat implementieren
@@ -65,8 +68,9 @@ class EditTodoFragment : Fragment() {
             if (itemId === -1) {
                 var todoTitle = binding.textInputTitleInputField.text.toString()
                 var todoDescription = binding.textInputDescriptionInputField.text.toString() ?: ""
+                var area = binding.areaDropdownMenuTextView.text.toString()
                 var todo = Todo(
-                    0, "Inbox", todoTitle, todoDescription,
+                    0, area, todoTitle, todoDescription,
                     Date(2020, 4, 20), Date(2020, 4, 20),
                     Date(2020, 4, 20), Date(2020, 4, 20),
                     false

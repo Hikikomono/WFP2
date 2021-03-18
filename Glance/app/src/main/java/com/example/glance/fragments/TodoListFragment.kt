@@ -27,6 +27,7 @@ class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
     private val todoViewModel: TodoViewModel by activityViewModels {
         TodoViewModelFactory((context?.applicationContext as TodoApplication).repository)
     }
+    private val args: TodoListFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,8 +37,10 @@ class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
         binding = DataBindingUtil.inflate(inflater, R.layout.todo_list_view, container, false)
 
         //receive Area Name from Bundle
-        val args: TodoListFragmentArgs? by navArgs()
+        val areaName = args.areaName
         Toast.makeText(context, "from ${args?.areaName}", Toast.LENGTH_SHORT).show()
+
+        todoViewModel.getAllTodoFromArea(areaName)
 
         //Init RecylcerView
         val recyclerView = binding.todosRecyclerView
@@ -45,7 +48,7 @@ class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        todoViewModel.allTodos.observe(viewLifecycleOwner, Observer {  todos ->
+        todoViewModel.allTodosFromArea?.observe(viewLifecycleOwner, Observer {  todos ->
             todos.let { adapter.submitList(it) }
         } )
         return binding.root
@@ -56,7 +59,9 @@ class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
 
         //Navigate to EditScreen
         binding.floatingActionButton.setOnClickListener { view: View ->
-            this.findNavController().navigate(R.id.action_TodoListFragment_to_EditScreenFragment)
+            var areaName = args.areaName
+            this.findNavController().navigate(TodoListFragmentDirections
+                .actionTodoListFragmentToEditScreenFragment(area = areaName))
         }
     }
 

@@ -32,5 +32,9 @@ class TodoRepository(private val todoDao: TodoDao) {
         return todoDao.getTodoAreaCount(area)
     }
 
+    @WorkerThread
+    suspend fun getAllTodoFromArea(area: String) : Flow<List<Todo>>{
+        return todoDao.getAllTodoFromArea(area)
+    }
 
 }

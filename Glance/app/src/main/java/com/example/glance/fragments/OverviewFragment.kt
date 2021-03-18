@@ -38,6 +38,7 @@ class OverviewFragment : Fragment() {
 
         todoViewModel.viewModelScope.launch {
             binding.inboxCount.setText(todoViewModel.getTodoAreaCount("Inbox").toString())
+            binding.todayCount.setText(todoViewModel.getTodoAreaCount("Today").toString())
         }
 
         
