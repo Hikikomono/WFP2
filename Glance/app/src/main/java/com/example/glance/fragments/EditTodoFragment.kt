@@ -54,6 +54,7 @@ class EditTodoFragment : Fragment() {
                 var description = tmpTodo.description
                 binding.textInputTitleInputField.setText(title)
                 binding.textInputDescriptionInputField.setText(description)
+                binding.areaDropdownMenuTextView.setText(tmpTodo.area)
             }
 
             Toast.makeText(
@@ -79,8 +80,10 @@ class EditTodoFragment : Fragment() {
                     var todo = todoViewModel.getTodoFromDatabase(args.itemId)
                     var title = binding.textInputTitleInputField.text.toString()
                     var description = binding.textInputDescriptionInputField.text.toString()
+                    var area = binding.areaDropdownMenuTextView.text.toString()
                     todo.title = title
                     todo.description = description
+                    todo.area = area
                     todoViewModel.updateTodo(todo)
                 }
             }
