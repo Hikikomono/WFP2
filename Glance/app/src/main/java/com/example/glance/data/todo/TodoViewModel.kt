@@ -3,6 +3,7 @@ package com.example.glance.data.todo
 import androidx.lifecycle.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.util.*
 
 class TodoViewModel(private val repository: TodoRepository) : ViewModel() {
     // Using LiveData and caching what allTodos returns has several benefits:
@@ -11,12 +12,20 @@ class TodoViewModel(private val repository: TodoRepository) : ViewModel() {
     // - Repository is completely separated from the UI through the ViewModel.
     val allTodos : LiveData<List<Todo>> = repository.allTodos.asLiveData()
 
-    var tmpAreaName: String = ""
+
+    //get a specifict TodoObject
+    suspend fun getTodoFromDatabase(id: Int) : Todo{
+        return repository.getTodo(id)
+    }
 
 
     //Launching a new coroutine to insert the data in a non-blocking way
-    fun insert(todo: Todo) = GlobalScope.launch{
+    fun insert(todo: Todo) = viewModelScope.launch{
         repository.insert(todo)
+    }
+
+    suspend fun updateTodo(todo: Todo){
+        repository.updateTodo(todo)
     }
 }
 

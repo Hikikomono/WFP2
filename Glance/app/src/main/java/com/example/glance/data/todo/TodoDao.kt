@@ -7,6 +7,9 @@ interface TodoDao {
     @Query("SELECT * FROM todo_table")
     fun getAllTodos(): Flow<List<Todo>>
 
+    @Query("SELECT * FROM todo_table WHERE id = :id")
+    suspend fun getTodo(id: Int) : Todo
+
     @Query("SELECT * FROM todo_table WHERE area = :area")
     fun getAllTodoFromArea(area : String) : Flow<List<Todo>>
 
@@ -17,10 +20,10 @@ interface TodoDao {
     fun getAllTodoFromAreaCompleted(area: String) : Flow<List<Todo>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(todo: Todo)
+    suspend fun insert(todo: Todo)
 
     @Update(onConflict =  OnConflictStrategy.IGNORE)
-    fun updateTodo(todo: Todo)
+    suspend fun updateTodo(todo: Todo)
 
     @Query("UPDATE todo_table SET completed = 'true' WHERE id = :id")
     fun updateSetTodoCompleted(id: Int)

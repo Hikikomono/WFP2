@@ -8,8 +8,19 @@ class TodoRepository(private val todoDao: TodoDao) {
     // Observed Flow will notify the observer when the data has changed.
     val allTodos : Flow<List<Todo>> = todoDao.getAllTodos()
 
+    suspend fun getTodo(id: Int) : Todo{
+        return todoDao.getTodo(id)
+    }
+
     @WorkerThread
     suspend fun insert(todo: Todo){
         todoDao.insert(todo)
     }
+
+    @WorkerThread
+    suspend fun updateTodo(todo: Todo){
+        todoDao.updateTodo(todo)
+    }
+
+
 }
