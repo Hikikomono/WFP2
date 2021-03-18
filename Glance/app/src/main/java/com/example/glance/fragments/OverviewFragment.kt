@@ -48,11 +48,15 @@ class OverviewFragment : Fragment() {
 
         //Navigate to TodoListFragment
         binding.todayLayout.setOnClickListener{ view: View->
-            this.findNavController().navigate(R.id.action_OverviewFragment_to_TodoListFragment)
+            this.findNavController()
+                .navigate( OverviewFragmentDirections.actionOverviewFragmentToTodoListFragment("Today"))
         }
 
         binding.inboxLayout.setOnClickListener { view : View ->
-            this.findNavController().navigate(R.id.action_OverviewFragment_to_TodoListFragment)
+            this.findNavController()
+                .navigate(
+                    OverviewFragmentDirections.actionOverviewFragmentToTodoListFragment("Inbox")
+                )
         }
 
     }

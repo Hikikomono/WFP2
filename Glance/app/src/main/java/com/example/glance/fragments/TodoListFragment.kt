@@ -17,6 +17,8 @@ import com.example.glance.data.todo.TodoViewModelFactory
 import com.example.glance.databinding.*
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.NavArgs
+import androidx.navigation.fragment.navArgs
 
 
 class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
@@ -32,6 +34,10 @@ class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.todo_list_view, container, false)
+
+        //receive Area Name from Bundle
+        val args: TodoListFragmentArgs? by navArgs()
+        Toast.makeText(context, "from ${args?.areaName}", Toast.LENGTH_SHORT).show()
 
         //Init RecylcerView
         val recyclerView = binding.todosRecyclerView
@@ -57,6 +63,7 @@ class TodoListFragment : Fragment(), TodoListAdapter.OnItemClickListener {
     //imp. OnItemClickListener method
     override fun onItemClick(position: Int) {
         var itemDbKey = adapter.currentList.get(position).id
-        this.findNavController().navigate(TodoListFragmentDirections.actionTodoListFragmentToEditScreenFragment(itemDbKey))
+        this.findNavController()
+            .navigate(TodoListFragmentDirections.actionTodoListFragmentToEditScreenFragment(itemDbKey))
     }
 }

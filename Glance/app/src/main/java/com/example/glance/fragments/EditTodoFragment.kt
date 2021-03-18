@@ -41,9 +41,6 @@ class EditTodoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //init safeArgs variable
-
-
-
         val args: EditTodoFragmentArgs by navArgs()
         var itemId = args.itemId
 

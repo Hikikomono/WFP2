@@ -34,5 +34,9 @@
         <action
             android:id="@+id/action_TodoListFragment_to_EditScreenFragment"
             app:destination="@id/EditScreenFragment" />
+        <argument
+            android:name="areaName"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 </navigation>
